@@ -1,0 +1,8 @@
+numpy==1.19.5
+torch==1.8.1
+transformers==4.8.2
+pandas==1.2.5
+plotly==5.1.0
+icecream==2.1.1
+protobuf==3.17.3
+scikit_learn==0.24.2
