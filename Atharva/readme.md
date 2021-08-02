@@ -20,9 +20,9 @@
 ***
 ### For evaluation and reproduction of results you must download the finetuned weights of the model 
 * Use this link to download models weights : https://drive.google.com/drive/folders/1J21PXTOAgQn3Ov4KEYSTQ-dJEguZxX7I?usp=sharing
-* To evaluate models run the below command
-  * ***For Single Task(Bert-Small)*** run : ```python evaluate.py --task stm --model_path path/to/saved/model-weights```
-  * For Multi Task(Roberta-Base) run : ```python evaluate.py --task mtm --model_path path/to/saved/model-weights```
+* To evaluate models run the below commands
+  * ***For Single Task(Bert-Small)***  : ```python evaluate.py --task stm --model_path path/to/saved/model-weights```
+  * ***For Multi Task(Roberta-Base)*** : ```python evaluate.py --task mtm --model_path path/to/saved/model-weights```
 
 * ```stm``` : single-task , ```mtm``` : multitask
 * The argument ```model_path``` expects full path to the **.bin** file.  
