@@ -2,7 +2,7 @@
 
 - This project contains Task 1 a) binary classification of humorous and non-humorous text 
 - Following models are presented:
-  1. LSTM
+  1. Vanilla LSTM
   2. GRU with GolVe Embeddings
 
 
@@ -11,16 +11,16 @@
 - A list of the top-level files in this project with a description of what each file is.
 
 ```
-- Datasets/                              ----> train/validation/gold test dataset in csv format 
+- Datasets/                        ----> train/test/gold dataset in csv format 
     - dev.csv
     - gold-test
     - train.csv
     
-- GRU+GloVe/                          ----> Folder for GRU with GloVe embeddings file
+- GRU+GloVe/                       ----> Folder for GRU with GloVe embeddings file
     - GRU+Glove.ipynb
     - gru+glove.py
 
-- readme.md                           ----> This markdown file you are reading.
+- readme.md                        ----> This markdown file you are reading.
 
 ```
 
@@ -30,24 +30,24 @@
 ```
 Hyperparameters:
 ------------------------------------------------------------
-# Input Layer -> hidden layer (128) -> output layer (2)
+# Input Layer ->GRU(100)-> hidden layer (128) -> output layer (1)
 optimiser = sgd
-learning_rate= 0.01
+learning_rate= 0.02
 epochs = 7
 ------------------------------------------------------------
 
 
 Results:
 ------------------------------------------------------------
-train loss:  0.0086
+train loss:  0.666
 ------------------------------------------------------------
-val loss:  0.4903  F1 score:  92.04  Accuracy:  90.10
+test loss:  0.658  F1 score:  0.771  Accuracy:  0.632
 ------------------------------------------------------------
-test loss:  0.3768  F1 score:  93.02  Accuracy:  91.50
+gold loss:  0.666  F1 score:  0.762  Accuracy:  0.615
 ------------------------------------------------------------
 
 ```
-3. GRU with Glove
+2. GRU with Glove
 ```
 Hyperparameters:
 ------------------------------------------------------------
@@ -62,7 +62,7 @@ Results:
 ------------------------------------------------------------
 train loss: 0.1122
 ------------------------------------------------------------
-test loss:  0.543 F1 score:  0.862  Accuracy:  0.820
+test loss:  0.543  F1 score:  0.862  Accuracy:  0.820
 ------------------------------------------------------------
 gold loss:  0.484  F1 score:  0.876  Accuracy:  0.846
 ------------------------------------------------------------
@@ -72,7 +72,7 @@ gold loss:  0.484  F1 score:  0.876  Accuracy:  0.846
 
 - Colab notebooks contains link to Google Colab and can be executed with runtime GPU directly
 
-1.Change the path of the dataset files
-2.Run all cells
+1. Change the path of the dataset files
+2. Execute cells
 
 
