@@ -1,9 +1,9 @@
+"""Implements metrics for multi-task setting."""
 from torchflare.metrics import MetricMeter, _BaseMetric
 import sklearn.metrics as skm
 import torch
 
-
-
+# Implementation F1-score customized for TorchFlare
 class SklearnF1(MetricMeter, _BaseMetric):
     def __init__(self, target_name: str):
         super(SklearnF1, self).__init__(multilabel=False)
@@ -39,7 +39,7 @@ class SklearnF1(MetricMeter, _BaseMetric):
         f1_score = self.f1(targets.numpy(), outputs.numpy())
         return torch.tensor(f1_score)
 
-
+# Implementation MSE customized for TorchFlare
 class SklearnMSE(MetricMeter, _BaseMetric):
     def __init__(self, target_name: str):
         super(SklearnMSE, self).__init__(multilabel=False)
