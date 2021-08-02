@@ -30,7 +30,7 @@
 ```
 Hyperparameters:
 ------------------------------------------------------------
-# Input Layer ->GRU(100)-> hidden layer (128) -> output layer (1)
+# Input Layer-> embeddings->LSTM(100)-> hidden layer (128) -> output layer (1)
 optimiser = sgd
 learning_rate= 0.02
 epochs = 7
