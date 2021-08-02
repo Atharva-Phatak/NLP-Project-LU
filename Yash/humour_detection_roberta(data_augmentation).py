@@ -63,12 +63,17 @@ device
 
 drive.mount('/content/gdrive', force_remount=True)
 
-"""# Data Exploration"""
+"""# Data Exploration
+
+Loading the dataset
+"""
 
 train_df = pd.read_csv('/content/train.csv')
 dev_df = pd.read_csv('/content/dev.csv')
 test_df = pd.read_csv('/content/test.csv')
 aug_df = pd.read_csv('/content/filtered_augemented_data.csv')
+
+"""Analyzing the data"""
 
 train_df.shape
 
@@ -87,6 +92,8 @@ train_df.head()
 
 train_df.info()
 
+"""Count of each class in train data."""
+
 class_names = ['Humorous', 'Non-Humorous']
 ax = sns.countplot(train_df.is_humor)
 plt.xlabel('Class Counts')
@@ -100,11 +107,15 @@ PRE_TRAINED_MODEL_NAME = 'roberta-base'
 
 tokenizer = RobertaTokenizer.from_pretrained(PRE_TRAINED_MODEL_NAME)
 
+"""Analysing the token length for each entry of the train data."""
+
 token_lens = []
 
 for txt in train_df.text:
   tokens = tokenizer.encode(txt, max_length=512)
   token_lens.append(len(tokens))
+
+"""Plot of token lengths"""
 
 sns.distplot(token_lens)
 plt.xlim([0, 256]);
@@ -183,6 +194,8 @@ def create_data_loader(df, tokenizer, max_len, batch_size):
     num_workers=16
   )
 
+"""Loading data from the data loader"""
+
 BATCH_SIZE = 32
 
 train_data_loader = create_data_loader(train_df, tokenizer, MAX_LEN, BATCH_SIZE)
@@ -217,7 +230,10 @@ class MyClassifier(nn.Module):
 model = MyClassifier(2)
 model = model.to(device)
 
-"""### Training"""
+"""### Training
+
+Train parameters
+"""
 
 EPOCHS = 5
 
@@ -400,4 +416,47 @@ model = model.to(device)
 """Saving weights in drive"""
 
 copyfile('/content/my_model_weights/run_5/epoch_5.pth', '/content/gdrive/MyDrive/Roberta_model_with_aug_weights.pth')
+
+"""# LOADING TRAINED MODEL FILE TO EVALUATE THE MODEL """
+
+def load_model_weights(model, path= None):
+  m = torch.load(path, map_location= torch.device('cpu'))
+  if 'state_dict' in m:
+    sd = m['state_dict']
+  else:
+    sd = m['model']
+
+  model_dict = model.state_dict()
+
+  state_dict = {k: v for k, v in sd.items() if (k in model_dict) and (v.shape == model_dict[k].shape)}
+  model_dict.update(state_dict) 
+  model.load_state_dict(model_dict)
+
+  if len(model_dict)!=len(state_dict):
+      print("")
+      
+  start_epoch = m['epoch'] + 1
+  return model, start_epoch
+
+"""Load model and test on gold-test data"""
+
+def test_after_loading_model():
+  path = "/content/gdrive/MyDrive/Roberta_model_with_aug_weights.pth"
+  model = MyClassifier(2)
+  model, start_epoch = load_model_weights(model, path)
+  model = model.to(device)
+
+  gold_test_loss, gold_metrics = eval_model(
+    model,
+    test_data_loader,
+    loss_fn,
+    device,
+    len(test_df)
+  )
+
+  print("Gold test Loss : ", gold_test_loss)
+  print("Gold test F1-Score : ", gold_metrics[0])
+  print("Gold test Accuracy : ", gold_metrics[1])
+
+test_after_loading_model()
 
