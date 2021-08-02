@@ -21,6 +21,7 @@ All the folders contain the code written by the members for their individual con
 |PyTorch| https://github.com/pytorch/pytorch
 |Tensorflow| https://github.com/tensorflow/tensorflow |
 |TorchFlare| https://github.com/Atharva-Phatak/torchflare |
+|transformers| https://github.com/huggingface/transformers |
 
 
 
