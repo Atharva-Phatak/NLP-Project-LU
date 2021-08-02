@@ -1,0 +1,2 @@
+transformers==4.9.1
+torchflare==0.2.3
