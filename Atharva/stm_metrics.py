@@ -1,8 +1,10 @@
+"""This file implements metrics for single-task setting"""
 from torchflare.metrics import MetricMeter, _BaseMetric
 import sklearn.metrics as skm
 import torch
 
 
+# Implementation of F1-score as required by TorchFlare.
 class SklearnF1(MetricMeter, _BaseMetric):
     def __init__(self):
         super(SklearnF1, self).__init__(multilabel=False)
