@@ -18,13 +18,26 @@ pip install -r requirements_baseline.txt
 
 ---
 
-# Running the models
-* For baseline models run : ``` humour_detection_baseline_models.py ```
-* For Roberta-base run : ``` humour_detection_roberta.py ```
-* For Roberta-base with data augmentation : ``` humour_detection_roberta(data_augmentation).py ```
+# Running the models ( While loading the dataset provide the respective path of the dataset files)
+* For baseline models run : ``` python humour_detection_baseline_models.py ```
+* For Roberta-base run : ``` python humour_detection_roberta.py ```
+* For Roberta-base with data augmentation : ``` python humour_detection_roberta(data_augmentation).py ```
 
 ----
 
-# Model weights
-* For Roberta-base : https://drive.google.com/file/d/1tvLLybpewPerGqH3cGRSfZC6LcS8EYAd/view?usp=sharing
-* For Roberta-base with data augmentation : https://drive.google.com/file/d/1gkToE3duIjDlzZ6IavJhKKxgeLqzCYWz/view?usp=sharing
+# For loading and evaluating the results:
+1 Download the weights of the model
+   * For Roberta-base : https://drive.google.com/file/d/1tvLLybpewPerGqH3cGRSfZC6LcS8EYAd/view?usp=sharing
+   * For Roberta-base with data augmentation : https://drive.google.com/file/d/1gkToE3duIjDlzZ6IavJhKKxgeLqzCYWz/view?usp=sharing
+ 
+2 Run test_after_loading_model() function(change the path variable in the function to the model path)
+
+---
+
+## Model Results on Gold-test-data
+|Model|Task-1a(F1-Score)|
+|-----|-----------------|
+|Roberta-base|0.950|
+|Roberta-base-with-augmentation|0.945|
+|Multinomial Naive Bayes|0.871|
+|Support Vector Machine|0.850|
