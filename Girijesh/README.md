@@ -24,7 +24,7 @@
 ***
 ### To train the models use the below commands
 
-* To train LSTM with Glove run : ```python lakehead_nlp_humor_detection_glove_lstm.py```
+* To train LSTM with Glove run on SemVal data : ```python lakehead_nlp_humor_detection_glove_lstm.py```
 * To train LSTM with Glove on augmented data run : ```python nlp_humor_detection_augemented_data.py```
 ***
 
