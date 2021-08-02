@@ -3,6 +3,7 @@
 1) ***Notebooks*** directory has all the final notebooks which are as follows
     * Bert-single-task.ipynb contains the training and evaluation for bert-small on task 1a
     * MultiTask_Roberta.ipynb contains training and evaluation for roberta-base trained in MultiTask fashion using task 1a,1b,1c.
+    * MultiTask_Bert_Small.ipynb contains training and evaluation for bert-small trained in MultiTask fashion using task 1a,1b,1c.
 2) ***Datasets*** directory has all the data used for training,validation and testing
 
 ***
