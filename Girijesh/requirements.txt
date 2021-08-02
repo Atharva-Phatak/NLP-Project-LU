@@ -1,10 +1,9 @@
 googledrivedownloader==0.4
-huggingface-hub==0.0.12
 Keras-Preprocessing==1.1.2
-matplotlib==3.2.2
 numpy==1.19.5
 pandas==1.1.5
 scikit-learn==0.22.2.post1
 seaborn==0.11.1
 sklearn==0.0
-torch==1.7.1
+strings==0.1.2
+reges==2021.7.6
