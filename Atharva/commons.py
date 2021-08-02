@@ -1,3 +1,4 @@
+"""This file contains dataclasses which hold parameters and data paths"""
 from enum import Enum
 import torch.nn.functional as F
 from dataclasses import dataclass

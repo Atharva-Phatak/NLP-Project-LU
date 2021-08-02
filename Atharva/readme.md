@@ -1,4 +1,4 @@
-### This directory structure is as follows
+### ***The directory structure is as follows***
 
 1) ***Notebooks*** directory has all the final notebooks which are as follows
     * Bert-single-task.ipynb contains the training and evaluation for bert-small on task 1a
