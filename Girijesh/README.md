@@ -17,10 +17,11 @@
 ***
 ### Change path of following before running code
 
-* Change path for all files
-* Download glove model from https://www.kaggle.com/thanakomsn/glove6b300dtxt and change path of variable ```glove_path``` to load glove model
 * cd into the Girijesh directory using ```cd Girijesh```
 * open terminal and run ```pip install -r requirements.txt```
+* Change path for all files
+* Download glove model from https://www.kaggle.com/thanakomsn/glove6b300dtxt and change path of variable ```glove_path``` to load glove model
+
 ***
 ### To train the models use the below commands
 
