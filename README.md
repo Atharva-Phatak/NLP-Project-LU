@@ -24,4 +24,7 @@ All the folders contain the code written by the members for their individual con
 |transformers| https://github.com/huggingface/transformers |
 
 
+### Main Multitask models are available here ![Atharva](https://github.com/Atharva-Phatak/NLP-Project-LU/tree/main/Atharva) and have instructions on how to run the code in the ![readme.md](https://github.com/Atharva-Phatak/NLP-Project-LU/blob/main/Atharva/readme.md)
+
+
 
