@@ -95,9 +95,9 @@ python bert_lstm_main.py
 
 - Following changes are required to load model weights
 
-1. Google drive link - [drive](https://drive.google.com/drive/folders/17e-Hu1aw9srRg1sIJoUuh-KiGtxHIoOn?usp=sharing)
+1. Google drive link download run_1/ (bert with mlp weights) and run_5/ (bert with lstm weights)- [drive](https://drive.google.com/drive/folders/17e-Hu1aw9srRg1sIJoUuh-KiGtxHIoOn?usp=sharing)
 2. Save at location Kshitija/my_model_weights/
 3. Uncomment and execute 'LOAD SAVED MODEL' section of code 
-4. execute 'EVALUATE GOLD TEST' section of code
+4. Execute 'EVALUATE GOLD TEST' section of code to get performance measure
 
 
